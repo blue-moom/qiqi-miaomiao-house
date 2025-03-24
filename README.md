@@ -3,7 +3,7 @@
 The great unity of people all over the world
 
 
-
+web x
 该代码faze旨在运用node.js联动MySQL数据库和前端代码实现web登录功能
 须知：
 需安装node插件以及MySQL插件
