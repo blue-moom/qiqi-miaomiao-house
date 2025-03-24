@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>	
+	   
+		#div1{
+			height: 30px;
+			  width: 100%;  
+			background-color: rgb(236, 239, 240);  
+			padding-top: 7px;
+		}
+		#a2{
+			
+			margin-left: 165px;
+		}
+        #a3{
+			text-decoration:none;
+			margin-left: 140px;
+		}
+		.e2{
+			right: 100%;
+			left: 100%;
+		}
+		.inline-elements img,  
+        .inline-elements input,
+		.inline-elements p {  
+			/* margin-left: 100px; */
+            display: inline-block;  
+            vertical-align: middle; 
+        }  
+        .inline-elements img {  
+            margin-right: 300px; 
+        }  
+		/* .inline-elements input{
+			margin-left: 100px;
+		} */
+		input{
+			border: 1px solid red;
+			width: 500px;
+			height: 30px;
+		   /* margin-right: 0%; */
+		}
+        .img{
+			margin-left: 110px;
+		}
+		/* p{
+			margin-left: 0;
+		} */
+		.inline-elements input,
+		.inline-elements p{
+			vertical-align: middle;
+		}
+		.lolai{
+			
+			width: 1350px;
+			margin-left: auto;  
+            margin-right: auto;  
+		}
+		#mien{
+			
+			width: 1350px;
+			margin-left: auto;  
+            margin-right: auto; 
+			
+		}
+		.tr1,.tr2,.tr3{
+			display: inline-block;  
+            
+		}
+		.td1{
+			background: url(./images/images/banner主图.png);
+			width: 688px;
+			height: 398px;
+		}
+		/* td2{
+			border: 1px solid red;
+			/* margin-bottom: 10px; 
+            width: 400px;
+			height: 100px;
+		}  */
+		.aa:hover{
+			text-decoration: underline;
+		}
+		.nm1 img {  
+    position: absolute;  
+      
+    left: 68%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm1 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 68%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm2 img {  
+    position: absolute;  
+      
+    left: 74%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm2 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 74%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm3 img {  
+    position: absolute;  
+      
+    left: 80%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm3 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 80%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm4 img {  
+    position: absolute;  
+      
+    left: 86%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm4 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 86%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm5 img {  
+    position: absolute;  
+      
+    left: 68%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm5 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 68%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm6 img {  
+    position: absolute;  
+      
+    left: 74%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm6 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 74%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm7 img {  
+    position: absolute;  
+      
+    left: 80%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm7 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 80%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm8 img {  
+    position: absolute;  
+      
+    left: 86%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm8 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 86%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm9 img {  
+    position: absolute;  
+      
+    left: 68%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm9 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 68%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm10 img {  
+    position: absolute;  
+      
+    left: 74%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm10 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 74%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm11 img {  
+    position: absolute;  
+      
+    left: 80%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm11 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 80%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  .nm12 img {  
+    position: absolute;  
+      
+    left: 86%;  
+    transform: translateX(-50%); /* 水平居中 */  
+    max-width: 80%; /* 确保图片不会超出容器宽度 */  
+    height: auto; /* 保持图片比例 */  
+  }  
+  .nm12 p {  
+    position: absolute;  
+    margin-top: 45px;
+    left: 86%;  
+     transform: translateX(-50%); /* 水平居中 */   
+  }  
+
+  #ple{
+	    
+		width: 1350px;
+		margin-left: auto;  
+        margin-right: auto; 
+  }
+
+  #que{
+	
+		width: 1350px;
+		margin-left: auto;  
+        margin-right: auto; 
+		padding-top: 25px;
+  }
+
+  .mabei{
+	
+		width: 1350px;
+		margin-left: auto;  
+        margin-right: auto; 
+		
+		
+		
+  }
+  .q1,.q2,.q3,.q4,.q5{
+	display: inline-block;  
+  }
+
+  #end{
+	margin-top: 40px;
+	border: 1px solid  rgb(49, 47, 47);
+		width:1560px;
+		background-color: rgb(49, 47, 47);
+		margin-left: auto;  
+        margin-right: auto; 
+	   
+		
+		padding: 40px 40px 5px 40px;
+  }
+  
+	</style>
+</head>
+<body>
+   <form id="a1">
+		<div id="div1">
+			
+            <a id="a2">尚品汇欢迎您</a>
+			<a href="" id="a3">请登录</a>
+			|
+			<a href="" style="text-decoration:none;">免费注册</a>
+			<a href="" style="text-decoration:none;   margin-left: 237px;">我的订单</a>
+			|
+            <a href="" style="text-decoration:none;">我的购物车</a>
+			|			
+			<a href="" style="text-decoration:none;">我的尚品汇</a>
+			|	
+			<a href="" style="text-decoration:none;">尚品汇会员</a>
+			|	
+			<a href="" style="text-decoration:none;">企业采购</a>
+			|	
+			<a href="" style="text-decoration:none;">关注尚品汇</a>
+			|	
+			<a href="" style="text-decoration:none;">合作招商</a>
+			|	
+			<a href="" style="text-decoration:none;">商家后台</a>
+			|	
+		
+		</div>
+		
+		<div class="inline-elements">
+			<img src="./images/images/logo.png" class="img" >
+			<input type="text" style="margin-left: 311px;" >
+            <p align="center" style=" background-color: red; width: 25px; height: 25px; "><img src="./images/images/serch_icon.png"></p>
+			
+			
+		</div>
+    </form>
+    <table class="lolai">
+	<tr>
+		<td align="center" style=" background-color: red; width: 198px; height: 40px;">全部商品分类</td>
+		<td>尚品超市</td>
+		<td>优惠券</td>
+		<td>买啥</td>
+		<td>尚品家电</td>
+		<td>尚品牛鲜</td>
+		<td>plus会员</td>
+		<td>进口好物</td>
+		<td>品牌闪购</td>
+		<td>拍卖</td>
+		<td>五金店</td>
+	</tr></table>
+	<table id="mien">
+	<tr class="tr1" style="width: 200px; float: left;  background-color: rgb(241, 240, 240); margin-top: 8px; height: 400px;">
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">手机</a>/<a class="aa" href="" style="text-decoration:none;">运营商</a>/<a class="aa" href="" style="text-decoration:none;">数码</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">电脑</a>/<a class="aa" href="" style="text-decoration:none;">办公</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">家具</a>/<a class="aa" href="" style="text-decoration:none;">家居</a>/<a class="aa" href="" style="text-decoration:none;">家装</a>/<a class="aa" href="" style="text-decoration:none;">厨具</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">男装</a>/<a class="aa" href="" style="text-decoration:none;">女装</a>/<a class="aa" href="" style="text-decoration:none;">童装</a>/<a class="aa" href="" style="text-decoration:none;">内衣</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">美妆</a>/<a class="aa" href="" style="text-decoration:none;">个性清洁</a>/<a class="aa" href="" style="text-decoration:none;">宠物</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">女鞋</a>/<a class="aa" href="" style="text-decoration:none;">箱包</a>/<a class="aa" href="" style="text-decoration:none;">钟表</a>/<a class="aa" href="" style="text-decoration:none;">珠宝</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">男鞋</a>/<a class="aa" href="" style="text-decoration:none;">运动</a>/<a class="aa" href="" style="text-decoration:none;">户外</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">房产</a>/<a class="aa" href="" style="text-decoration:none;">汽车</a>/<a class="aa" href="" style="text-decoration:none;">汽车用品</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">母婴</a>/<a class="aa" href="" style="text-decoration:none;">玩具乐器</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">食品</a>/<a class="aa" href="" style="text-decoration:none;">酒类</a>/<a class="aa" href="" style="text-decoration:none;">生鲜</a>/<a class="aa" href="" style="text-decoration:none;">特产</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">艺术</a>/<a class="aa" href="" style="text-decoration:none;">礼品鲜花</a>/<a class="aa" href="" style="text-decoration:none;">农资绿植</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">医药保健</a>/<a class="aa" href="" style="text-decoration:none;">计生情趣</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">图书</a>/<a class="aa" href="" style="text-decoration:none;">文娱</a>/<a class="aa" href="" style="text-decoration:none;">教育</a>/<a class="aa" href="" style="text-decoration:none;">电子书</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">机票</a>/<a class="aa" href="" style="text-decoration:none;"></a>酒店</a>/<a class="aa" href="" style="text-decoration:none;">旅游</a>/<a class="aa" href="" style="text-decoration:none;">生活</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">众筹</a>/<a class="aa" href="" style="text-decoration:none;">白条</a>/<a class="aa" href="" style="text-decoration:none;">保险</a>/<a class="aa" href="" style="text-decoration:none;">企业金融</a></td>
+			<td style="display: flex;"><a class="aa" href="" style="text-decoration:none;">安装</a>/<a class="aa" href="" style="text-decoration:none;">维修</a>/<a class="aa" href="" style="text-decoration:none;">清洗</a>/<a class="aa" href="" style="text-decoration:none;">二手</a></td>
+			
+		</tr>
+		<tr class="tr2" style=" margin-top: 6px; margin-left: 10px;">
+			<td class="td1">
+				 <!-- <img src="./images/images/banner主图.png">  -->
+			</td>
+		</tr>
+		<tr class="tr3" style="float:right; border: 2px solid rgb(240, 237, 237);margin-top: 8px;  width: 428px; height: 160px; ">
+             
+			<td class="td2" style="padding: 5px;">
+	            <p style=" width: 400px; height: 20px;  line-height: 20px; margin-left: 10px; margin-top: 2px; ">尚品快报 <a href="" style="text-decoration:none; float: right; ">更多 ></a><hr style=" background-color: rgb(240, 237, 237); height: 1px;"> </p>
+                <a  href="" style="text-decoration:none;">[特惠] 毛衣+直筒裤才是yyds</a><br>
+					<a  href="" style="text-decoration:none;">[特惠] 毛衣+直筒裤才是yyds</a><br>
+						<a  href="" style="text-decoration:none;">[特惠] 毛衣+直筒裤才是yyds</a><br>
+						<a  href="" style="text-decoration:none;">[特惠] 毛衣+直筒裤才是yyds</a>
+				
+			</td>
+			 
+			  
+		</tr>
+		<tr  style=" float: right; margin-top: -235px; width: 430px; height: 70px;">
+			<td class="nm1">
+				<img src="./images/images/icon_话费_nor.png"><p>话费</p>
+			</td>
+			<td class="nm2">
+				<img src="./images/images/icon_huoche.png"><p>话费</p>
+			</td>
+			<td class="nm3">
+                <img src="./images/images/icon_加油卡_nor.png"><p>话费</p>
+			</td>
+			<td class="nm4">
+				<img src="./images/images/icon_白条_nor.png"><p>话费</p>
+			</td>
+		</tr>
+		<tr  style=" float: right; margin-top: -155px; width: 430px; height: 70px;">
+            <td class="nm5">
+				<img src="./images/images/icon_电影票_nor.png"><p>话费</p>
+			</td>
+			<td class="nm6">
+				<img src="./images/images/icon_酒店_nor.png"><p>话费</p>
+			</td>
+			<td class="nm7">
+				<img src="./images/images/icon_理财_nor.png"><p>话费</p>
+			</td>
+			<td class="nm8">
+				<img src="./images/images/icon_机票_nor.png"><p>话费</p>
+			</td>
+		</tr>
+		<tr  style=" float: right; margin-top: -75px; width: 430px; height: 70px;">
+            <td class="nm9">
+				<img src="./images/images/icon_礼品卡_nor.png"><p>话费</p>
+			</td>
+			<td class="nm10">
+				<img src="./images/images/icon_彩票_nor.png"><p>话费</p>
+			</td>
+			<td class="nm11">
+				<img src="./images/images/icon_游戏_nor.png"><p>话费</p>
+			</td>
+			<td class="nm12">
+				<img src="./images/images/icon_众筹_nor.png"><p>话费</p>
+			</td>
+		</tr>
+</table>
+
+<table id="ple">
+	<tr>
+		<td>
+			<img src="./images/images/seckill.png" style="width: 200px; float: left; height: 203px; margin-left: -2px;">
+		</td>
+		<td>
+			<img src="./images/images/banner1.png" style=" height: 202px; margin-top: 3px; margin-left: -64px;">
+		</td>
+		<td>
+			<img src="./images/images/banner2.png" style="height: 202px; margin-top: 3px; margin-left: -60px;">
+		</td>
+		<td>
+			<img src="./images/images/banner3.png" style="height: 202px; margin-top: 3px; margin-left: -60px;">
+		</td>
+		<td>
+			<img src="./images/images/baner4.png" style="height: 202px; margin-top: 3px; margin-left: -60px;">
+		</td>
+	</tr>
+</table>
+<table id="que">
+	<tr>
+		
+		<td>
+			家用电器
+			<a href="" style="text-decoration:none; margin-left: 607px;">高端电器</a>
+			|
+			<a href="" style="text-decoration:none;">我的购物车</a>
+			|			
+			<a href="" style="text-decoration:none;">我的尚品汇</a>
+			|	
+			<a href="" style="text-decoration:none;">尚品汇会员</a>
+			|	
+			<a href="" style="text-decoration:none;">企业采购</a>
+			|	
+			<a href="" style="text-decoration:none;">关注尚品汇</a>
+			|	
+			<a href="" style="text-decoration:none;">合作招商</a>
+			<hr style="width: 1270px; float: left; " color="red">
+            
+		</td>
+		
+	</tr>
+</table>
+<table class="mabei">
+    <tr class="q1" style="float: left; ; background-color: rgb(246, 243, 243);  width: 250px; height: 432px; ">
+             
+		<td style="padding-left: 30px;  padding-top: 6px;">
+			节能补贴
+			<hr style=" background-color: rgb(240, 237, 237); height: 1px;"> 
+		</td>
+		<td style="padding-left: 45px;  padding-top: 6px;">
+			4K电视
+			<hr style=" background-color: rgb(240, 237, 237); height: 1px;"> 
+		</td>
+		<td style="padding-left: 25px;  padding-top: 6px; float: left;">
+			空气净化器
+			<hr style=" background-color: rgb(240, 237, 237); height: 1px;"> 
+		</td>
+		<td style="padding-left: 33px;  padding-top: 6px; float: left;">
+			IH电饭煲
+			<hr style=" background-color: rgb(240, 237, 237); height: 1px;"> 
+		</td>
+		<td style="padding-left: 25px;  padding-top: 6px; float: left;">
+			滚筒洗衣机
+			<hr style=" background-color: rgb(240, 237, 237); height: 1px;"> 
+		</td>
+		<td style="padding-left: 34px;  padding-top: 6px; float: left;">
+			电热水壶
+			<hr style=" background-color: rgb(240, 237, 237); height: 1px;"> 
+		</td>
+		<td style="float: left; margin-left: 20px;">
+			<img src="./images/images/编组.png">
+		</td>
+	</tr>
+	<tr class="q2">
+		<td>
+			<img src="./images/images/appliance_banner07.png" style="margin-top: -3px;">
+		</td>
+	</tr>
+	<tr class="q3">
+		<td>
+			<img src="./images/images/微波炉.png" style="margin-top: -400px;">
+		</td>
+		 <td>
+			<img src="./images/images/空气炸锅.png" style="float: left; margin-top: 190px; margin-left: -210px;">
+		</td> 
+	</tr>
+	 <tr class="q4">
+		<td>
+			<img src="./images/images/冰箱.png" style="margin-left: -50px; margin-top: -7px;">
+		</td>
+	</tr>
+</table>
+<table id="end">
+	<tr>
+		<td>
+			<a style="color: aliceblue; margin-left: 400px;">购物指南</a>
+			<a style="color: aliceblue;  margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+		</td>
+		
+	</tr>
+	<tr>
+		<td>
+			<a style="color: aliceblue; margin-left: 400px;">购物指南</a>
+			<a style="color: aliceblue;  margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a style="color: aliceblue; margin-left: 400px;">购物指南</a>
+			<a style="color: aliceblue;  margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a style="color: aliceblue; margin-left: 400px;">购物指南</a>
+			<a style="color: aliceblue;  margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+			<a style="color: aliceblue; margin-left: 50px;">购物指南</a>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
