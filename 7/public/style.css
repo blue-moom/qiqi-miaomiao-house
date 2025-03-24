@@ -1,0 +1,85 @@
+h1{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 80%;
+    margin: auto;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+canvas{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: -2px -2px 2px #EFEFEF,5px 5px 5px #b9b9b9;
+    cursor: grabbing;
+    
+}
+form#action{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80%;
+    bottom: 0;
+    margin: auto;
+    width: 308px;
+    height: 50px;
+    text-align: center;
+}
+button{
+    background-color: rgb(57, 57, 245);
+    color: #EFEFEF;
+    line-height: 30px;
+}
+div#current{
+    width: 300px;
+    position: absolute;
+    left: 10px;
+    top: 350px;
+}
+div.info{
+    width: 250px;
+}
+div.info input{
+    width: 173px;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+button#enter{
+    float: right;
+    margin-top: -40px;
+}
+div.userInfo{
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    width: 250px;
+}
+div.waitingUser{
+    width: 250px;
+    padding-bottom: 2px;
+    text-align: center;
+}
+div.userItem{
+    min-width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 6px;
+    margin-top: 10px;
+    line-height: 60px;
+}

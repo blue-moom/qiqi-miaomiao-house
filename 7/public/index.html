@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋online</title>
+    <link rel="stylesheet" href="./style.css" media="screen and (min-width:900px)">
+
+</head>
+<body onbeforeunload="checkLeave()" style="background-color: #1abc9c;">
+    <h1>五子棋</h1>
+    <div id="current">
+        <div class="infoWrapper">
+            <div class="info">
+                <label for="user">用户名：</label>
+                <input type="text" name="user" id="user">
+            </div>
+            <div class="info">
+                <label for="room">房间号：</label>
+                <input type="text" name="room" id="room">
+            </div>
+        </div>
+        <button id="enter">进入</button>
+    </div>
+
+    <div class="userWrapper">
+        <div class="userInfo"></div>
+        <div class="waitingUser"></div>
+    </div>
+
+    <div class="chessBoard">
+        <canvas id="chess" width="450px" height="450px"></canvas>
+        <canvas id="layer" width="450px" height="450px"></canvas>
+    </div>
+
+    <form action="" id="action">
+        <input type="color" name="color" id="colorSelect" value="#DEB888">
+    </form>
+
+    <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+    <script src="./chessBorad.js"></script>
+
+</body>
+</html>
