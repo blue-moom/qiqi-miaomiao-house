@@ -14,8 +14,8 @@ if "%commit_msg%"=="" (
 echo Committing with message: %commit_msg%
 git commit -m "%commit_msg%"
 
-echo Pushing to GitHub...
-git push origin main
+echo Pushing to GitHub (master branch)...
+git push origin master
 
 echo Done! Changes should deploy automatically to Vercel.
 pause
