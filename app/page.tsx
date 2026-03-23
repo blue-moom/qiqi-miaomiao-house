@@ -132,7 +132,9 @@ export default function Home() {
   }, [showOnboarding, currentStep]);
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredContents, setFilteredContents] = useState(currentSection?.contents || []);
+  const [filteredContents, setFilteredContents] = useState<ContentItem[]>([]);
+
+  const currentSection = sections.find(s => s.id === activeSection);
 
   useEffect(() => {
     if (currentSection?.contents) {
@@ -141,6 +143,8 @@ export default function Home() {
         item.author.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredContents(filtered);
+    } else {
+      setFilteredContents([]);
     }
   }, [currentSection, searchTerm]);
 
