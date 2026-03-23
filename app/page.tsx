@@ -336,15 +336,23 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-gray-900 relative overflow-hidden">
+      {/* 轻盈的背景装饰 */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-full opacity-25 animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-r from-yellow-200 to-orange-200 rounded-full opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-1/3 w-16 h-16 bg-gradient-to-r from-green-200 to-teal-200 rounded-full opacity-20 animate-float" style={{ animationDelay: '0.5s' }}></div>
+      </div>
+      
       {/* 顶部导航栏 */}
-      <header className="bg-gray-800/95 backdrop-blur-lg shadow-lg border-b border-gray-700 sticky top-0 z-40">
+      <header className="bg-white/80 backdrop-blur-lg shadow-lg border-b border-gray-200 sticky top-0 z-40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center">
               <motion.h1 
-                className="text-2xl font-bold text-pink-500 cursor-pointer hover:text-pink-400 transition-colors duration-200"
+                className="text-2xl font-bold text-indigo-600 cursor-pointer hover:text-indigo-500 transition-colors duration-200"
                 onClick={handleLogoClick}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -352,7 +360,7 @@ export default function Home() {
                 我的B站
               </motion.h1>
               <motion.div 
-                className="ml-2 px-2 py-1 bg-pink-600 text-xs rounded-full text-white font-medium"
+                className="ml-2 px-2 py-1 bg-gradient-to-r from-pink-500 to-purple-600 text-xs rounded-full text-white font-medium"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.5, type: "spring", stiffness: 500 }}
@@ -369,8 +377,8 @@ export default function Home() {
                   onClick={() => setActiveSection(section.id)}
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     activeSection === section.id
-                      ? 'text-white bg-pink-600 shadow-lg'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                      ? 'text-white bg-gradient-to-r from-pink-500 to-purple-600 shadow-lg'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -391,7 +399,7 @@ export default function Home() {
             <div className="flex items-center space-x-4">
               {/* 通知 */}
               <motion.button 
-                className="text-gray-400 hover:text-white transition-colors duration-200 relative"
+                className="text-gray-500 hover:text-gray-700 transition-colors duration-200 relative"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -410,7 +418,7 @@ export default function Home() {
 
               {/* 移动端菜单按钮 */}
               <motion.button 
-                className="md:hidden text-gray-400 hover:text-white"
+                className="md:hidden text-gray-500 hover:text-gray-700"
                 whileTap={{ scale: 0.9 }}
               >
                 ☰
@@ -424,15 +432,15 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* 欢迎横幅 */}
         <motion.div 
-          className="mb-12 bg-gradient-to-r from-purple-900 via-pink-900 to-indigo-900 rounded-2xl p-8 text-center relative overflow-hidden"
+          className="mb-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl p-8 text-center relative overflow-hidden shadow-xl"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* 背景装饰 */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-pulse"></div>
-          <div className="absolute top-4 right-4 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-float"></div>
-          <div className="absolute bottom-4 left-4 w-16 h-16 bg-pink-400 rounded-full opacity-25 animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent animate-pulse"></div>
+          <div className="absolute top-4 right-4 w-20 h-20 bg-yellow-300 rounded-full opacity-30 animate-float"></div>
+          <div className="absolute bottom-4 left-4 w-16 h-16 bg-pink-300 rounded-full opacity-40 animate-float" style={{ animationDelay: '1s' }}></div>
           
           <div className="relative z-10">
             <motion.h1 
@@ -444,7 +452,7 @@ export default function Home() {
               欢迎来到我的小房间 🎉
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-300 mb-6 max-w-2xl mx-auto"
+              className="text-xl text-white/90 mb-6 max-w-2xl mx-auto"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -457,16 +465,16 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
                 🎮 游戏攻略
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
                 🤖 AI科技
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
                 🎵 音乐推荐
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
                 📺 动漫精选
               </div>
             </motion.div>
@@ -481,9 +489,9 @@ export default function Home() {
                 placeholder={`在 ${currentSection?.name} 分区搜索...`}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 shadow-lg"
               />
-              <div className="absolute right-3 top-3 text-gray-400">
+              <div className="absolute right-3 top-3 text-gray-500">
                 🔍
               </div>
             </div>
@@ -493,7 +501,7 @@ export default function Home() {
         {/* 分区标题和统计 */}
         <div className="text-center mb-8">
           <motion.h2 
-            className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent"
+            className="text-4xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -501,7 +509,7 @@ export default function Home() {
             {currentSection?.name}分区
           </motion.h2>
           <motion.p 
-            className="text-gray-400 text-lg"
+            className="text-gray-600 text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -521,13 +529,13 @@ export default function Home() {
             {filteredContents.map((item, index) => (
               <motion.div
                 key={item.id}
-                className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-700 group"
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100 group"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ 
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
-                  borderColor: "rgba(236, 72, 153, 0.3)"
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+                  borderColor: "rgba(99, 102, 241, 0.3)"
                 }}
               >
                 {/* 封面图 */}
@@ -538,14 +546,14 @@ export default function Home() {
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded-full text-xs font-medium">
+                  <div className="absolute top-3 right-3 bg-indigo-600 text-white px-2 py-1 rounded-full text-xs font-medium">
                     HD
                   </div>
                 </div>
 
                 {/* 内容信息 */}
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2 line-clamp-2 text-white group-hover:text-pink-400 transition-colors duration-300">
+                  <h3 className="text-lg font-semibold mb-2 line-clamp-2 text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
                     {item.title}
                   </h3>
                   
@@ -554,15 +562,15 @@ export default function Home() {
                     <img 
                       src={item.avatar} 
                       alt={item.author} 
-                      className="w-8 h-8 rounded-full mr-3 ring-2 ring-gray-600 group-hover:ring-pink-500 transition-all duration-300" 
+                      className="w-8 h-8 rounded-full mr-3 ring-2 ring-gray-200 group-hover:ring-indigo-300 transition-all duration-300" 
                     />
-                    <span className="text-sm text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer">
+                    <span className="text-sm text-gray-600 hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
                       {item.author}
                     </span>
                   </div>
 
                   {/* 统计信息 */}
-                  <div className="flex justify-between items-center text-sm text-gray-400">
+                  <div className="flex justify-between items-center text-sm text-gray-500">
                     <div className="flex items-center space-x-4">
                       <span className="flex items-center">
                         <span className="mr-1">👁</span>
@@ -573,17 +581,17 @@ export default function Home() {
                         {item.likes}
                       </span>
                     </div>
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-400">
                       刚刚
                     </div>
                   </div>
 
                   {/* 悬浮时显示的操作按钮 */}
                   <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center space-x-2">
-                    <button className="bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200">
+                    <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200">
                       播放
                     </button>
-                    <button className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200">
+                    <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200">
                       收藏
                     </button>
                   </div>
@@ -599,7 +607,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-bold text-gray-400 mb-2">没有找到相关内容</h3>
+            <h3 className="text-2xl font-bold text-gray-700 mb-2">没有找到相关内容</h3>
             <p className="text-gray-500">试试其他关键词或切换分区</p>
           </motion.div>
         )}
@@ -613,15 +621,15 @@ export default function Home() {
                   key={page}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                     page === 1 
-                      ? 'bg-pink-600 text-white' 
-                      : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
+                      ? 'bg-indigo-600 text-white' 
+                      : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-gray-200'
                   }`}
                 >
                   {page}
                 </button>
               ))}
               <span className="px-2 py-2 text-gray-500">...</span>
-              <button className="px-4 py-2 rounded-lg bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition-all duration-300">
+              <button className="px-4 py-2 rounded-lg bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-gray-200 transition-all duration-300">
                 下一页
               </button>
             </div>
@@ -630,23 +638,23 @@ export default function Home() {
       </main>
 
       {/* 页脚 */}
-      <footer className="bg-gray-900 border-t border-gray-800 mt-16">
+      <footer className="bg-gray-50 border-t border-gray-200 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-bold text-white mb-4">关于我们</h3>
-              <p className="text-gray-400 text-sm">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">关于我们</h3>
+              <p className="text-gray-600 text-sm">
                 这里是我的小角落，分享有趣的内容和创意。
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white mb-4">分区</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">分区</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
                 {sections.map(section => (
                   <li key={section.id}>
                     <button 
                       onClick={() => setActiveSection(section.id)}
-                      className="hover:text-pink-400 transition-colors duration-200"
+                      className="hover:text-indigo-600 transition-colors duration-200"
                     >
                       {section.name}
                     </button>
@@ -655,28 +663,28 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white mb-4">联系方式</h3>
-              <div className="space-y-2 text-sm text-gray-400">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">联系方式</h3>
+              <div className="space-y-2 text-sm text-gray-600">
                 <p>📧 contact@myroom.ccwu.cc</p>
                 <p>🏠 myroom.ccwu.cc</p>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white mb-4">关注我们</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">关注我们</h3>
               <div className="flex space-x-4">
-                <button className="text-gray-400 hover:text-pink-400 transition-colors duration-200 text-xl">
+                <button className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 text-xl">
                   📘
                 </button>
-                <button className="text-gray-400 hover:text-pink-400 transition-colors duration-200 text-xl">
+                <button className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 text-xl">
                   📷
                 </button>
-                <button className="text-gray-400 hover:text-pink-400 transition-colors duration-200 text-xl">
+                <button className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 text-xl">
                   🐦
                 </button>
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+          <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
             <p>&copy; 2024 我的小房间. All rights reserved. | Made with ❤️</p>
           </div>
         </div>
