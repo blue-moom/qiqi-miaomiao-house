@@ -258,6 +258,9 @@ export default function Home() {
   ]);
   const [showNotifications, setShowNotifications] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showFavoritesModal, setShowFavoritesModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
   const [currentUser, setCurrentUser] = useState<User>({
     id: 'user1',
     name: '访客用户',
@@ -357,6 +360,15 @@ export default function Home() {
     setNotifications(prev => prev.map(notif => ({ ...notif, read: true })));
   };
 
+  const openFavorites = () => {
+    setShowFavoritesModal(true);
+    setShowUserMenu(false);
+  };
+
+  const closeFavorites = () => {
+    setShowFavoritesModal(false);
+  };
+
   useEffect(() => {
     if (showOnboarding) {
       window.addEventListener('keydown', handleKeyPress);
@@ -380,6 +392,15 @@ export default function Home() {
       setFilteredContents([]);
     }
   }, [currentSection, searchTerm]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredContents.length / itemsPerPage));
+  const paginatedContents = filteredContents.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(1);
+    }
+  }, [totalPages, currentPage]);
 
   if (showOnboarding) {
     const textVariants = {
@@ -751,10 +772,7 @@ export default function Home() {
                           📊 数据统计
                         </button>
                         <button 
-                          onClick={() => {
-                            setShowUserMenu(false);
-                            // 这里可以添加打开收藏页面的逻辑
-                          }}
+                          onClick={openFavorites}
                           className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         >
                           ❤️ 我的收藏 ({favorites.length})
@@ -848,7 +866,13 @@ export default function Home() {
 
                 {/* 其他选项 */}
                 <div className="mt-8 pt-6 border-t border-gray-200 space-y-2">
-                  <button className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200">
+                  <button
+                    onClick={() => {
+                      openFavorites();
+                      setSidebarOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                  >
                     ❤️ 我的收藏 ({favorites.length})
                   </button>
                   <button className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200">
@@ -962,7 +986,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            {filteredContents.map((item, index) => (
+            {paginatedContents.map((item, index) => (
               <motion.div
                 key={item.id}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100 group"
@@ -1059,23 +1083,34 @@ export default function Home() {
         )}
 
         {/* 分页指示器 */}
-        {filteredContents.length > 12 && (
+        {filteredContents.length > itemsPerPage && (
           <div className="flex justify-center mt-12">
-            <div className="flex space-x-2">
-              {[1, 2, 3].map(page => (
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                className="px-3 py-2 rounded-lg bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all duration-200"
+                disabled={currentPage === 1}
+              >
+                上一页
+              </button>
+              {Array.from({ length: totalPages }, (_, idx) => idx + 1).map(page => (
                 <button
                   key={page}
-                  className={`px-4 py-2 rounded-lg transition-all duration-300 ${
-                    page === 1 
-                      ? 'bg-indigo-600 text-white' 
-                      : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-gray-200'
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                    page === currentPage
+                      ? 'bg-indigo-600 text-white'
+                      : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
                   }`}
                 >
                   {page}
                 </button>
               ))}
-              <span className="px-2 py-2 text-gray-500">...</span>
-              <button className="px-4 py-2 rounded-lg bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-gray-200 transition-all duration-300">
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                className="px-3 py-2 rounded-lg bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all duration-200"
+                disabled={currentPage === totalPages}
+              >
                 下一页
               </button>
             </div>
@@ -1195,13 +1230,13 @@ export default function Home() {
 
       {/* 收藏列表模态框 */}
       <AnimatePresence>
-        {showUserMenu && (
+        {showFavoritesModal && (
           <motion.div
             className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setShowUserMenu(false)}
+            onClick={closeFavorites}
           >
             <motion.div
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-hidden"
@@ -1214,7 +1249,7 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-gray-900">我的收藏</h2>
                   <button
-                    onClick={() => setShowUserMenu(false)}
+                    onClick={closeFavorites}
                     className="text-gray-500 hover:text-gray-700 text-xl"
                   >
                     ✕
